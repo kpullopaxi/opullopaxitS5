@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="opullopaxitS5.Views.vHome"
+             Title="vHome">
+    <VerticalStackLayout Padding="5" Spacing="5">
+        <Label 
+            Text="SEMANA 5 SQLITE"
+            HorizontalTextAlignment="Center"
+            FontSize="24"
+            TextColor="Purple"/>
+        <Label Text="kleber Pullopaxi" 
+               HorizontalTextAlignment="End" 
+               FontSize="10" TextColor="Red"/>
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese su nombre"
+               FontSize="16"
+               Margin="0,10,0,0"/>
+        <Entry x:Name="txtId"
+               Placeholder="Ingrese el ID (para actualizar/eliminar)"
+               Keyboard="Numeric"
+               FontSize="16"
+               Margin="0,10,0,0"/>
+        <Button x:Name="btnInsertar"
+                Text="Añadir persona"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Clicked="btnInsertar_Clicked"
+                Margin="0,10,0,0"/>
+        <Button x:Name="btnActualizar"
+                Text="Actualizar persona"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Clicked="btnActualizar_Clicked"
+                Margin="0,10,0,0"/>
+        <Button x:Name="btnEliminar"
+                Text="Eliminar persona"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Clicked="btnEliminar_Clicked"
+                Margin="0,10,0,0"/>
+        <Label x:Name="status"
+               TextColor="Red"
+               FontSize="16"
+               Margin="0,10,0,0"/>
+        <Button x:Name="btnListar"
+                Text="Listar"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Clicked="btnListar_Clicked"
+                Margin="0,10,0,0"/>
+        <CollectionView x:Name="ListaPersonas"
+                        Margin="0,10,0,0"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" Margin="0,5,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Id}" 
+                               FontSize="16"
+                               TextColor="Black"
+                               VerticalTextAlignment="Center"
+                               Grid.Column="0"/>
+                        <Label Text="{Binding Nombre}" 
+                               FontSize="16"
+                               TextColor="Black"
+                               VerticalTextAlignment="Center"
+                               Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
